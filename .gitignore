@@ -3,5 +3,12 @@ node_modules/
 .env
 .env.*
 !.env.example
-prisma/*.db
-prisma/*.db-journal
+
+# Bancos SQLite locais
+*.db
+*.db-journal
+
+# Arquivos e pastas locais de ferramentas
+.agents/
+.claude/
+.windsurf/

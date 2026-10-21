@@ -1,0 +1,173 @@
+
+/* Identidade visual compartilhada */
+
+.glass {
+  background: rgba(29, 27, 33, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Cabeçalho */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding: 16px 24px;
+  margin: 20px;
+
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #f5f2f5;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+  background: linear-gradient(145deg, #bd304b, #711529);
+  box-shadow: 0 4px 18px rgba(189, 48, 75, 0.25);
+}
+
+.brand-symbol {
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  color: #b9b3bf;
+  text-decoration: none;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  font-size: 14px;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background: rgba(172, 39, 64, 0.30);
+  box-shadow: inset 0 0 0 1px rgba(210, 76, 99, 0.12);
+}
+
+/* Rodapé */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 18px 24px;
+  margin: 20px;
+
+  color: #aaa3b0;
+  font-size: 13px;
+}
+
+.footer-copyright {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #c8c0cc;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer-links a:hover {
+  color: #ed6b82;
+}
+
+/* Acessibilidade: respeita preferência por menos animação */
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .footer-links a {
+    transition: none;
+  }
+}
+
+/* Layout para celulares */
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 16px;
+    margin: 12px;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .navigation {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 18px;
+    margin: 12px;
+  }
+}
